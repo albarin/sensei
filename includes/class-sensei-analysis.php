@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * All functionality pertaining to the Admin Analysis in Sensei.
+ * All functionality pertaining to the Admin Analysis in Sensei. UPDATED!
  *
  * @package Analytics
  * @author Automattic
