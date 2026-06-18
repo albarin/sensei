@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Handles all admin views, assets and navigation. UPDATED!
+ * Handles all admin views, assets and navigation. UPDATED!!
  *
  * @package Views
  * @author Automattic
