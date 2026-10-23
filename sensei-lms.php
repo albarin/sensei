@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Sensei LMS
+ * Plugin Name: Sensei LMS update
  * Plugin URI: https://senseilms.com/
  * Description: Share your knowledge, grow your network, and strengthen your brand by launching an online course.
  * Version: 4.26.4
