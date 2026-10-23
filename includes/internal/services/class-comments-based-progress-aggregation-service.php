@@ -143,7 +143,7 @@ class Comments_Based_Progress_Aggregation_Service implements Progress_Aggregatio
 	/**
 	 * Count course progress records grouped by post and status.
 	 *
-	 * @since $$next-version$$
+	 * @since 4.27.0
 	 *
 	 * @param int[] $course_ids Course IDs to count; an empty list counts all courses.
 	 * @param array $args {
@@ -348,7 +348,7 @@ class Comments_Based_Progress_Aggregation_Service implements Progress_Aggregatio
 	/**
 	 * Count completed lesson progress per lesson.
 	 *
-	 * @since $$next-version$$
+	 * @since 4.27.0
 	 *
 	 * @param int[] $lesson_ids Lesson post IDs.
 	 * @param array $args       Optional query filters (see interface).
@@ -402,7 +402,7 @@ class Comments_Based_Progress_Aggregation_Service implements Progress_Aggregatio
 	/**
 	 * Get rounded completion-day averages keyed by requested course ID.
 	 *
-	 * @since $$next-version$$
+	 * @since 4.27.0
 	 *
 	 * @param int[] $course_ids Course post IDs.
 	 * @param array $args       Optional query filters (see interface).
