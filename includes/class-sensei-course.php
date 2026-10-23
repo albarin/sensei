@@ -1637,7 +1637,7 @@ class Sensei_Course {
 	 * plugins cannot limit it to the current language. Use it where the lessons
 	 * of that exact course are needed, like reading progress stored against them.
 	 *
-	 * @since $$next-version$$
+	 * @since 4.27.0
 	 *
 	 * @param int   $course_id  The course ID.
 	 * @param array $query_args Optional. Query arguments that override the defaults, like `post_status`. Default published lessons.
