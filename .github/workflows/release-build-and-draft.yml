@@ -11,10 +11,6 @@ on:
 
 permissions: {}
 
-# One group per branch: a shared group would let the run of another closed pull request cancel a queued release.
-concurrency:
-    group: release-build-and-draft-${{ github.event.pull_request.head.ref || 'manual' }}
-
 env:
     # Lets gh find the repository in the jobs that have no checkout.
     GH_REPO: ${{ github.repository }}
@@ -50,7 +46,6 @@ jobs:
             - name: Check the release
               id: check
               env:
-                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   HEAD_REF: ${{ github.event.pull_request.head.ref }}
               run: |
                   VERSION=$( sed -nE 's/^ \* Version: (.+)$/\1/p' sensei-lms.php )
@@ -64,14 +59,6 @@ jobs:
                   # A release only comes from its own release pull request.
                   if [[ -n "$PR_NUMBER" && "$HEAD_REF" != "release/$VERSION" ]]; then
                       echo "::error::The merged branch is $HEAD_REF and sensei-lms.php has version $VERSION, so release/$VERSION was expected."
-                      exit 1
-                  fi
-
-                  # Not silenced: if the request fails, the step stops and shows the API error.
-                  TAG_COUNT=$( gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/tags/version/$VERSION" \
-                      --jq "map( select( .ref == \"refs/tags/version/$VERSION\" ) ) | length" )
-                  if [[ "$TAG_COUNT" != "0" ]]; then
-                      echo "::error::Tag version/$VERSION already exists: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/version/$VERSION"
                       exit 1
                   fi
 
@@ -158,11 +145,11 @@ jobs:
                       --title "$VERSION" \
                       --notes-file release-notes.md )
 
-                  echo "The draft release for $VERSION is ready, built from $RELEASE_SHA. [Review and publish it]($RELEASE_URL). Publishing creates the \`version/$VERSION\` tag." > message.md
-                  cat message.md >> "$GITHUB_STEP_SUMMARY"
+                  MESSAGE="The draft release for $VERSION is ready, built from $RELEASE_SHA. [Review and publish it]($RELEASE_URL). Publishing creates the \`version/$VERSION\` tag."
+                  echo "$MESSAGE" >> "$GITHUB_STEP_SUMMARY"
 
                   # The draft exists at this point, so a failed comment must not fail the run.
-                  if [[ -n "$PR_NUMBER" ]] && ! gh pr comment "$PR_NUMBER" --body-file message.md; then
+                  if [[ -n "$PR_NUMBER" ]] && ! gh pr comment "$PR_NUMBER" --body "$MESSAGE"; then
                       echo "::warning::Could not comment on #$PR_NUMBER. The draft release is at $RELEASE_URL"
                   fi
 
