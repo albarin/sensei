@@ -1,5 +1,10 @@
 *** Changelog ***
 
+## 9.9.9 - 2026-11-16
+### Fixed
+- Test entry for the release workflow rehearsal.
+- Second test entry.
+
 ## 4.27.0 - 2026-11-10
 ### Security
 - Added capability checks to the course notification, settings section, exit survey and extension install requests.
