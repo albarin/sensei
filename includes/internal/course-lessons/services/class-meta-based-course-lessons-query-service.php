@@ -79,7 +79,7 @@ class Meta_Based_Course_Lessons_Query_Service implements Course_Lessons_Query_Se
 	 *
 	 * @internal
 	 *
-	 * @since $$next-version$$
+	 * @since 4.28.0
 	 *
 	 * @param WP_Query $query The query being prepared.
 	 */
@@ -105,7 +105,7 @@ class Meta_Based_Course_Lessons_Query_Service implements Course_Lessons_Query_Se
 	 *
 	 * @internal
 	 *
-	 * @since $$next-version$$
+	 * @since 4.28.0
 	 *
 	 * @param WP_Query $query The query being prepared.
 	 */
@@ -132,7 +132,7 @@ class Meta_Based_Course_Lessons_Query_Service implements Course_Lessons_Query_Se
 	 *
 	 * @internal
 	 *
-	 * @since $$next-version$$
+	 * @since 4.28.0
 	 *
 	 * @param WP_Query $query The query being prepared.
 	 */
@@ -151,7 +151,7 @@ class Meta_Based_Course_Lessons_Query_Service implements Course_Lessons_Query_Se
 	 *
 	 * @internal
 	 *
-	 * @since $$next-version$$
+	 * @since 4.28.0
 	 *
 	 * @param WP_Query $query The query being prepared.
 	 */
@@ -172,7 +172,7 @@ class Meta_Based_Course_Lessons_Query_Service implements Course_Lessons_Query_Se
 	 *
 	 * @internal
 	 *
-	 * @since $$next-version$$
+	 * @since 4.28.0
 	 *
 	 * @param WP_Query $query The query being prepared.
 	 */
