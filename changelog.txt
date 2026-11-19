@@ -1,5 +1,9 @@
 *** Changelog ***
 
+## 4.28.1 - 2026-11-19
+### Fixed
+- Rehearsal change one. [#8](https://github.com/Automattic/sensei/pull/8)
+
 ## 4.28.0 - 2026-11-19
 ### Changed
 - Link Sensei Pro upsells to plans and add direct checkout to the course wizard. [#8455](https://github.com/Automattic/sensei/pull/8455)
